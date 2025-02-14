@@ -1,0 +1,134 @@
+/* Estilo general */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    background-color: black; /* Fondo negro */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    color: white; /* Texto en blanco */
+}
+
+.heart-background {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.container {
+    text-align: center;
+    background-color: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+    z-index: 2;
+    color: black;
+}
+
+h1 {
+    font-size: 28px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.tulip {
+    font-size: 40px;
+    margin-bottom: 10px;
+}
+
+.buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+button {
+    padding: 12px 25px;
+    font-size: 18px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-weight: bold;
+}
+
+#yes {
+    background-color: #ff6f61;
+    color: white;
+}
+
+#no {
+    background-color: #ff4d4d;
+    color: white;
+}
+
+/* Carta de mensaje */
+.card {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.5);
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+    text-align: center;
+    color: black;
+    transition: transform 0.5s ease-in-out;
+}
+
+.card.open-card {
+    display: block;
+    transform: translate(-50%, -50%) scale(1);
+}
+
+/* Corazones cayendo */
+@keyframes fall {
+    0% {
+        top: -100px;
+        opacity: 1;
+    }
+    100% {
+        top: 100vh;
+        opacity: 0;
+    }
+}
+
+.heart-fall {
+    position: absolute;
+    font-size: 30px;
+    color: red;
+    animation: fall 5s infinite;
+    z-index: 1;
+    opacity: 0;
+}
+
+.heart-fall:nth-child(1) {
+    left: 10%;
+    animation-delay: 0s;
+}
+.heart-fall:nth-child(2) {
+    left: 30%;
+    animation-delay: 1s;
+}
+.heart-fall:nth-child(3) {
+    left: 50%;
+    animation-delay: 2s;
+}
+.heart-fall:nth-child(4) {
+    left: 70%;
+    animation-delay: 3s;
+}
+.heart-fall:nth-child(5) {
+    left: 90%;
+    animation-delay: 4s;
+}
